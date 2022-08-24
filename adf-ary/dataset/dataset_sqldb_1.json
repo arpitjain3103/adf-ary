@@ -19,7 +19,8 @@
 			},
 			{
 				"name": "OrderYear",
-				"type": "char"
+				"type": "int",
+				"precision": 10
 			},
 			{
 				"name": "OrderQuantity",
@@ -29,7 +30,7 @@
 		],
 		"typeProperties": {
 			"schema": "dbo",
-			"table": "SALES"
+			"table": "SALE1"
 		}
 	}
 }

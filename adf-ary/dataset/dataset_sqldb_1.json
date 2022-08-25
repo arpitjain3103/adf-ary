@@ -7,6 +7,30 @@
 		},
 		"annotations": [],
 		"type": "AzureSqlTable",
-		"schema": []
+		"schema": [
+			{
+				"name": "ProductID",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "PName",
+				"type": "char"
+			},
+			{
+				"name": "OrderYear",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "OrderQuantity",
+				"type": "int",
+				"precision": 10
+			}
+		],
+		"typeProperties": {
+			"schema": "dbo",
+			"table": "SALE1"
+		}
 	}
 }

@@ -1,0 +1,57 @@
+{
+	"name": "dataset_sqldB_2",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "Ls_sqldb_3",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": [
+			{
+				"name": "country",
+				"type": "char"
+			},
+			{
+				"name": "country_code",
+				"type": "char"
+			},
+			{
+				"name": "continent",
+				"type": "char"
+			},
+			{
+				"name": "population",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "indicator",
+				"type": "char"
+			},
+			{
+				"name": "daily_count",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "D_date",
+				"type": "date"
+			},
+			{
+				"name": "rate_14_day",
+				"type": "decimal",
+				"precision": 18,
+				"scale": 0
+			},
+			{
+				"name": "source",
+				"type": "char"
+			}
+		],
+		"typeProperties": {
+			"schema": "dbo",
+			"table": "cases"
+		}
+	}
+}

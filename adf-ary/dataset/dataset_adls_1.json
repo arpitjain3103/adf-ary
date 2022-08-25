@@ -10,7 +10,8 @@
 		"typeProperties": {
 			"location": {
 				"type": "AzureBlobFSLocation",
-				"fileName": "SalesDataPivot.csv",
+				"fileName": "cases_deaths (1).csv",
+				"folderPath": "DemoData",
 				"fileSystem": "input"
 			},
 			"columnDelimiter": ",",

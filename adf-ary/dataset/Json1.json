@@ -1,0 +1,168 @@
+{
+	"name": "Json1",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "AzureDataLakeStorage2",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "Json",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobFSLocation",
+				"fileName": "samplejson.json",
+				"fileSystem": "input"
+			}
+		},
+		"schema": {
+			"type": "object",
+			"properties": {
+				"_id": {
+					"type": "object",
+					"properties": {
+						"$oid": {
+							"type": "string"
+						}
+					}
+				},
+				"Assignees": {
+					"type": "object",
+					"properties": {
+						"Assignee": {
+							"type": "object",
+							"properties": {
+								"OrganizationId": {
+									"type": "integer"
+								},
+								"OrganizationName": {
+									"type": "string"
+								},
+								"Name": {
+									"type": "string"
+								},
+								"UserId": {
+									"type": "integer"
+								}
+							}
+						}
+					}
+				},
+				"Comments": {
+					"type": "string"
+				},
+				"DateCompleted": {
+					"type": "string"
+				},
+				"DateDue": {
+					"type": "string"
+				},
+				"DateIn": {
+					"type": "string"
+				},
+				"DaysLate": {
+					"type": "integer"
+				},
+				"DocumentNumber": {
+					"type": "string"
+				},
+				"DocumentRevision": {
+					"type": "integer"
+				},
+				"DocumentTitle": {
+					"type": "string"
+				},
+				"DocumentTrackingId": {
+					"type": "string"
+				},
+				"DocumentVersion": {
+					"type": "integer"
+				},
+				"Duration": {
+					"type": "integer"
+				},
+				"FileName": {
+					"type": "string"
+				},
+				"FileSize": {
+					"type": "integer"
+				},
+				"Initiator": {
+					"type": "object",
+					"properties": {
+						"OrganizationId": {
+							"type": "integer"
+						},
+						"OrganizationName": {
+							"type": "string"
+						},
+						"Name": {
+							"type": "string"
+						},
+						"UserId": {
+							"type": "integer"
+						}
+					}
+				},
+				"OriginalDueDate": {
+					"type": "string"
+				},
+				"ReasonForIssue": {
+					"type": "string"
+				},
+				"Reviewer": {
+					"type": "object",
+					"properties": {
+						"OrganizationId": {
+							"type": "integer"
+						},
+						"OrganizationName": {
+							"type": "string"
+						},
+						"Name": {
+							"type": "string"
+						},
+						"UserId": {
+							"type": "integer"
+						}
+					}
+				},
+				"StepName": {
+					"type": "string"
+				},
+				"StepOutcome": {
+					"type": "string"
+				},
+				"StepStatus": {
+					"type": "string"
+				},
+				"WorkflowName": {
+					"type": "string"
+				},
+				"WorkflowNumber": {
+					"type": "string"
+				},
+				"WorkflowStatus": {
+					"type": "string"
+				},
+				"WorkflowTemplate": {
+					"type": "string"
+				},
+				"WorkflowId": {
+					"type": "string"
+				},
+				"naturalKeyLabel": {
+					"type": "string"
+				},
+				"primaryIdentifier": {
+					"type": "string"
+				},
+				"CacheDate": {
+					"type": "string"
+				},
+				"ScopeName": {
+					"type": "string"
+				}
+			}
+		}
+	}
+}

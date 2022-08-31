@@ -19,24 +19,80 @@
 					"name": "source2"
 				}
 			],
-			"sinks": [],
+			"sinks": [
+				{
+					"dataset": {
+						"referenceName": "dataset_adls_1",
+						"type": "DatasetReference"
+					},
+					"name": "sink1"
+				}
+			],
 			"transformations": [
 				{
 					"name": "join1"
 				}
 			],
 			"scriptLines": [
-				"source(allowSchemaDrift: true,",
+				"source(output(",
+				"          sort as short,",
+				"          UserId as integer,",
+				"          ProjectAddress as string,",
+				"          OrganizationName as string,",
+				"          OrganizationId as integer,",
+				"          JobTitle as string,",
+				"          Mobile as double,",
+				"          ProjectFax as long,",
+				"          ProjectPhone as long,",
+				"          SearchResultType as string,",
+				"          TradingName as string,",
+				"          UserName as string,",
+				"          Email as string,",
+				"          primaryIdentifier as string,",
+				"          naturalKeyLabel as integer,",
+				"          CacheDate as string",
+				"     ),",
+				"     allowSchemaDrift: true,",
 				"     validateSchema: false,",
 				"     ignoreNoFilesFound: false) ~> source1",
-				"source(allowSchemaDrift: true,",
+				"source(output(",
+				"          sort as short,",
+				"          UserId as integer,",
+				"          ProjectAddress as string,",
+				"          Organization as string,",
+				"          OrganizationId as string,",
+				"          JobTitle as string,",
+				"          Mobile as string,",
+				"          ProjectFax as string,",
+				"          ProjectPhone as string,",
+				"          Type as string,",
+				"          TradingName as string,",
+				"          UserName as string,",
+				"          EmailAddress as string,",
+				"          primaryIdentifier as string",
+				"     ),",
+				"     allowSchemaDrift: true,",
 				"     validateSchema: false,",
-				"     ignoreNoFilesFound: false) ~> source2",
-				"source1, source2 join(ERROR_FUNCTION('') == ERROR_FUNCTION(''),",
+				"     ignoreNoFilesFound: false,",
+				"     modifiedAfter: (toTimestamp(1661904000718L))) ~> source2",
+				"source1, source2 join(source1@UserId == source2@UserId,",
 				"     joinType:'right',",
 				"     matchType:'exact',",
 				"     ignoreSpaces: false,",
-				"     broadcast: 'auto')~> join1"
+				"     broadcast: 'auto')~> join1",
+				"join1 sink(allowSchemaDrift: true,",
+				"     validateSchema: false,",
+				"     input(",
+				"          ProductID as string,",
+				"          Name as string,",
+				"          OrderYear as string,",
+				"          OrderQuantity as string",
+				"     ),",
+				"     umask: 0022,",
+				"     preCommands: [],",
+				"     postCommands: [],",
+				"     skipDuplicateMapInputs: true,",
+				"     skipDuplicateMapOutputs: true) ~> sink1"
 			]
 		}
 	}

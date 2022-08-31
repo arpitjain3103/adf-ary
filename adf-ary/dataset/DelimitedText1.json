@@ -1,0 +1,100 @@
+{
+	"name": "DelimitedText1",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "AzureDataLakeStorage3",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "DelimitedText",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobFSLocation",
+				"fileName": "Psample.csv",
+				"fileSystem": "input"
+			},
+			"columnDelimiter": ",",
+			"escapeChar": "\\",
+			"firstRowAsHeader": true,
+			"quoteChar": "\""
+		},
+		"schema": [
+			{
+				"name": "sort",
+				"type": "String"
+			},
+			{
+				"name": "UserId",
+				"type": "String"
+			},
+			{
+				"name": "ProjectAddress",
+				"type": "String"
+			},
+			{
+				"name": "OrganizationName",
+				"type": "String"
+			},
+			{
+				"name": "OrganizationId",
+				"type": "String"
+			},
+			{
+				"name": "JobTitle",
+				"type": "String"
+			},
+			{
+				"name": "Mobile",
+				"type": "String"
+			},
+			{
+				"name": "ProjectFax",
+				"type": "String"
+			},
+			{
+				"name": "ProjectPhone",
+				"type": "String"
+			},
+			{
+				"name": "SearchResultType",
+				"type": "String"
+			},
+			{
+				"name": "TradingName",
+				"type": "String"
+			},
+			{
+				"name": "UserName",
+				"type": "String"
+			},
+			{
+				"name": "Email",
+				"type": "String"
+			},
+			{
+				"name": "primaryIdentifier",
+				"type": "String"
+			},
+			{
+				"name": "naturalKeyLabel",
+				"type": "String"
+			},
+			{
+				"name": "CacheDate",
+				"type": "String"
+			},
+			{
+				"name": "Organization",
+				"type": "String"
+			},
+			{
+				"name": "Type",
+				"type": "String"
+			},
+			{
+				"name": "EmailAddress",
+				"type": "String"
+			}
+		]
+	}
+}

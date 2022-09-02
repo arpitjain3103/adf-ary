@@ -22,13 +22,6 @@
 						"type": "DatasetReference"
 					},
 					"name": "sink1"
-				},
-				{
-					"dataset": {
-						"referenceName": "functionds1",
-						"type": "DatasetReference"
-					},
-					"name": "sink2"
 				}
 			],
 			"transformations": [
@@ -60,28 +53,13 @@
 				"     ),",
 				"     deletable:false,",
 				"     insertable:true,",
-				"     updateable:false,",
+				"     updateable:true,",
 				"     upsertable:false,",
+				"     keys:['CRAFT_CODE'],",
 				"     format: 'table',",
 				"     skipDuplicateMapInputs: true,",
 				"     skipDuplicateMapOutputs: true,",
-				"     errorHandlingOption: 'stopOnFirstError') ~> sink1",
-				"derivedColumn1 sink(allowSchemaDrift: true,",
-				"     validateSchema: false,",
-				"     input(",
-				"          CRAFT_CODE as string,",
-				"          SOURCE as string,",
-				"          DESTINATION as string",
-				"     ),",
-				"     deletable:false,",
-				"     insertable:true,",
-				"     updateable:false,",
-				"     upsertable:false,",
-				"     recreate:true,",
-				"     format: 'table',",
-				"     skipDuplicateMapInputs: true,",
-				"     skipDuplicateMapOutputs: true,",
-				"     errorHandlingOption: 'stopOnFirstError') ~> sink2"
+				"     errorHandlingOption: 'stopOnFirstError') ~> sink1"
 			]
 		}
 	}

@@ -27,9 +27,6 @@
 			"transformations": [
 				{
 					"name": "derivedColumn1"
-				},
-				{
-					"name": "AlterRow1"
 				}
 			],
 			"scriptLines": [
@@ -43,8 +40,7 @@
 				"     isolationLevel: 'READ_UNCOMMITTED',",
 				"     format: 'table') ~> source1",
 				"source1 derive(code = reverse(substring(reverse(CRAFT_CODE),1,locate('@',reverse(CRAFT_CODE))-1))) ~> derivedColumn1",
-				"derivedColumn1 alterRow(updateIf(CRAFT_CODE==CRAFT_CODE)) ~> AlterRow1",
-				"AlterRow1 sink(allowSchemaDrift: true,",
+				"derivedColumn1 sink(allowSchemaDrift: true,",
 				"     validateSchema: false,",
 				"     input(",
 				"          CRAFT_CODE as string,",
@@ -53,9 +49,9 @@
 				"     ),",
 				"     deletable:false,",
 				"     insertable:true,",
-				"     updateable:true,",
+				"     updateable:false,",
 				"     upsertable:false,",
-				"     keys:['CRAFT_CODE'],",
+				"     recreate:true,",
 				"     format: 'table',",
 				"     skipDuplicateMapInputs: true,",
 				"     skipDuplicateMapOutputs: true,",

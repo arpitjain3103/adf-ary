@@ -1,0 +1,29 @@
+{
+	"name": "functionds1",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "ls_function1",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": [
+			{
+				"name": "CRAFT_CODE",
+				"type": "varchar"
+			},
+			{
+				"name": "SOURCE",
+				"type": "varchar"
+			},
+			{
+				"name": "DESTINATION",
+				"type": "varchar"
+			}
+		],
+		"typeProperties": {
+			"schema": "dbo",
+			"table": "FLIGHT"
+		}
+	}
+}

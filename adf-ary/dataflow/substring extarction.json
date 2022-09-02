@@ -53,12 +53,11 @@
 				"     ),",
 				"     deletable:false,",
 				"     insertable:true,",
-				"     updateable:true,",
-				"     upsertable:true,",
-				"     keys:['CRAFT_CODE'],",
+				"     updateable:false,",
+				"     upsertable:false,",
+				"     recreate:true,",
 				"     format: 'table',",
 				"     skipDuplicateMapInputs: true,",
-				"     skipDuplicateMapOutputs: true,",
 				"     errorHandlingOption: 'stopOnFirstError') ~> sink1"
 			]
 		}
